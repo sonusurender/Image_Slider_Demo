@@ -1,0 +1,39 @@
+buildscript {
+  repositories {
+    mavenCentral()
+      google()
+  }
+
+  dependencies {
+    classpath "com.android.tools.build:gradle:1.0.0"
+  }
+}
+
+apply plugin: "com.android.library"
+
+repositories {
+  mavenCentral()
+    google()
+}
+
+android {
+  compileSdkVersion 15
+    defaultConfig {
+        minSdkVersion 4
+    }
+
+    android {
+    sourceSets {
+      main {
+        manifest.srcFile "AndroidManifest.xml"
+        java.srcDirs = [ "src" ]
+
+        res.srcDirs = [ "res" ]
+      }
+    }
+  }
+}
+
+dependencies {
+  implementation "com.android.support:support-v4:19.1.0"
+}
